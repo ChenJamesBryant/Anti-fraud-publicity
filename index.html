@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="反诈宣传：不贪小便宜，反诈记心间。点击学习反诈宣传手册。">
+  <title>反诈宣传 | 不贪小便宜 反诈记心间</title>
+  <style>
+    :root {
+      --navy-deep: #001a3f;
+      --navy: #012a5e;
+      --blue: #0b4a9b;
+      --red: #d9251d;
+      --red-deep: #b81b15;
+      --white: #ffffff;
+      --gold: #f5c44f;
+      --gray: #6b7a90;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--navy-deep);
+    }
+
+    body {
+      background: #dbe4f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background: #f4f7fc;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
+    }
+
+    /* 顶部深蓝色区域 */
+    .top-zone {
+      background: linear-gradient(160deg, var(--navy-deep), var(--blue));
+      position: relative;
+      padding: 22px 18px 26px;
+      border-radius: 0 0 28px 28px;
+      overflow: hidden;
+    }
+
+    .top-zone::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .top-zone::before {
+      content: "";
+      position: absolute;
+      left: -50px;
+      bottom: -50px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 20px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #dbe9ff;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 12px 0 6px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero .caption {
+      margin: 12px auto 0;
+      font-size: 13px;
+      color: #bcd1f0;
+      letter-spacing: 0.5px;
+    }
+
+    /* 警示文案卡片 */
+    .slogan-card {
+      position: relative;
+      z-index: 3;
+      margin: -20px 18px 0;
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px 16px;
+      box-shadow: 0 10px 28px rgba(1, 42, 94, 0.16);
+      border: 1px solid #e3ebf7;
+    }
+
+    .slogan-card .label {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+    }
+
+    .slogan-card h1 {
+      margin-top: 12px;
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--navy-deep);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .slogan-card h1 strong {
+      color: var(--red);
+    }
+
+    .slogan-card p {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--gray);
+    }
+
+    /* 防范要点 */
+    .tips {
+      margin: 16px 18px 0;
+    }
+
+    .tips-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy-deep);
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .tips-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      border-radius: 4px;
+      background: linear-gradient(180deg, var(--red), var(--blue));
+    }
+
+    .tip-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .tip-item {
+      background: #fff;
+      border: 1px solid #e3ebf7;
+      border-radius: 14px;
+      padding: 12px 10px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #3b4d6b;
+      box-shadow: 0 4px 12px rgba(1, 42, 94, 0.05);
+    }
+
+    .tip-item b {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    /* 按钮区域 */
+    .action-area {
+      padding: 22px 18px 34px;
+      text-align: center;
+    }
+
+    .btn-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 54px;
+      background: linear-gradient(180deg, #e0332b, var(--red-deep));
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(216, 37, 29, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      letter-spacing: 1px;
+      animation: pulse 1.8s ease-in-out infinite;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-main:active {
+      transform: translateY(2px) scale(0.99);
+      box-shadow: 0 5px 14px rgba(216, 37, 29, 0.35);
+    }
+
+    .btn-main .arrow {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .btn-main:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        box-shadow: 0 10px 24px rgba(216, 37, 29, 0.35), 0 0 0 0 rgba(216, 37, 29, 0.28);
+      }
+      50% {
+        box-shadow: 0 10px 24px rgba(216, 37, 29, 0.35), 0 0 0 10px rgba(216, 37, 29, 0);
+      }
+    }
+
+    .safe-note {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #7b8aa3;
+      line-height: 1.7;
+    }
+
+    .safe-note strong {
+      color: var(--blue);
+    }
+
+    /* 底部 */
+    .footer {
+      padding: 0 18px 24px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .footer .line {
+      width: 40px;
+      height: 2px;
+      margin: 0 auto 10px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    }
+
+    @media (min-width: 481px) {
+      body {
+        padding: 16px 0;
+      }
+
+      .phone {
+        min-height: calc(100vh - 32px);
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!-- 顶部深蓝宣传区 -->
+    <header class="top-zone">
+      <div class="badge">
+        <span class="dot"></span>
+        全民反诈 · 守护钱袋子
+      </div>
+
+      <div class="hero">
+        <!-- 将你上传的反诈图片保存为 fanzha.png，并放在同一目录 -->
+        <img src="./fanzha.png" alt="防诈骗宣传图：不贪小便宜 反诈记心间">
+        <div class="caption">国家反诈中心 · 反诈宣传</div>
+      </div>
+    </header>
+
+    <!-- 核心文案 -->
+    <section class="slogan-card">
+      <span class="label">反诈提醒</span>
+      <h1>
+        天上不会掉馅饼，<br>
+        <strong>不贪小便宜</strong>，拒绝非法网贷，保护资金安全！
+      </h1>
+      <p>
+        刷单返利、冒充客服、虚假贷款、杀猪盘……骗子套路不断更新。
+        牢记“不轻信、不透露、不转账”，遇到可疑情况及时拨打 110 或 96110。
+      </p>
+    </section>
+
+    <!-- 防范要点 -->
+    <section class="tips">
+      <div class="tips-title">防骗要点</div>
+      <div class="tip-list">
+        <div class="tip-item">
+          <b>未知链接不点击</b>
+          陌生短信、社交软件中的链接，不点、不填、不转账。
+        </div>
+        <div class="tip-item">
+          <b>个人信息不透露</b>
+          身份证号、银行卡号、验证码，绝不告诉陌生人。
+        </div>
+        <div class="tip-item">
+          <b>非法网贷不参与</b>
+          放款前先收费、要求刷流水，都是诈骗。
+        </div>
+        <div class="tip-item">
+          <b>转账汇款多核实</b>
+          遇到“领导”“亲友”借钱，务必电话或当面确认。
+        </div>
+      </div>
+    </section>
+
+    <!-- 红色按钮 -->
+    <section class="action-area">
+      <a
+        class="btn-main"
+        href="https://m.mps.gov.cn/n6935718/n7579327/c9257095/content.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>点击学习反诈宣传手册</span>
+        <span class="arrow">→</span>
+      </a>
+      <p class="safe-note">
+        将跳转至<strong>中华人民共和国公安部</strong>官方页面，请放心学习。
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="line"></div>
+      不贪小便宜 · 反诈记心间<br>
+      反诈宣传 · 公益页面
+    </footer>
+  </div>
+</body>
+</html>
